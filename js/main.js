@@ -95,8 +95,6 @@ btn.addEventListener("click", () => {
       }
 
       //for displaying in the dom
-      seconds_tobe_displayed = time_provided % 60;
-      minutes_tobe_displayed = (time_provided - seconds_tobe_displayed) % 59;
       timeDisplay.textContent = `${hours_tobe_displayed} : ${minutes_tobe_displayed} : ${seconds_tobe_displayed}`;
       seconds_tobe_displayed -= 1;
       time_provided -= 1;
