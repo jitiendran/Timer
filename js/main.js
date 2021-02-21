@@ -10,18 +10,16 @@ let default_progress_value = 820;
 let hours_tobe_displayed = 0,
   minutes_tobe_displayed = 0,
   seconds_tobe_displayed = 0;
-
 //on clicking set button
 set.addEventListener("click", () => {
   //converting all the values to seconds
   let time_provided =
     hours.value * 3600 + minutes.value * 60 + seconds.value - 1;
-  const minimised = 820 / (time_provided + 1);
-
   //setting values of hours,minutes and seconds
   hours_tobe_displayed = hours.value;
   minutes_tobe_displayed = minutes.value;
   seconds_tobe_displayed = seconds.value - 1;
+  const minimised = 820 / (time_provided + 1);
 
   //checking whether the value of hours ans minutes are null
   if (hours.value === "") {
@@ -30,6 +28,7 @@ set.addEventListener("click", () => {
   if (minutes.value === "") {
     minutes_tobe_displayed = "00";
   }
+
   //This is the real timer functionality
   const timer = setInterval(() => {
     if (time_provided <= 0) {
@@ -42,6 +41,8 @@ set.addEventListener("click", () => {
     }
 
     //for displaying in the dom
+    seconds_tobe_displayed = time_provided % 60;
+    minutes_tobe_displayed = (time_provided - seconds_tobe_displayed) % 59;
     times.textContent = `${hours_tobe_displayed} : ${minutes_tobe_displayed} : ${seconds_tobe_displayed}`;
     seconds_tobe_displayed -= 1;
     time_provided -= 1;
