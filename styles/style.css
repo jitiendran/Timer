@@ -8,6 +8,8 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-image: -webkit-gradient(linear, left top, right top, from(#00c6ff), to(#0072ff));
+  background-image: linear-gradient(to right, #00c6ff, #0072ff);
   width: auto;
   height: 100vh;
 }
@@ -44,8 +46,11 @@ body header .timer-wrapper .time-input span {
 body header .timer-wrapper .time-input input {
   outline: none;
   font-size: 1.1em;
+  padding: 0em 0.3em;
   margin-right: 0.3em;
-  border: 3px solid #98fb98;
+  background: transparent;
+  border: 3px solid #fff;
+  color: #fff;
   border-radius: 0.3em;
   width: 5em;
 }
@@ -109,21 +114,38 @@ body main .main-content svg circle {
 
 body main .main-content svg circle:nth-child(1) {
   stroke-dashoffset: 0;
-  stroke: #ccc;
+  stroke: #fff;
 }
 
 body main .main-content svg circle:nth-child(2) {
   stroke-dashoffset: 820;
-  stroke: cornflowerblue;
+  stroke: #f6d365;
 }
 
 body main .main-content .time-start {
-  width: 200px;
+  width: 230px;
+  height: 230px;
   margin-top: 0.5em;
   margin-left: -1.5em;
   text-align: center;
   position: absolute;
   font-weight: 500;
   font-size: 2em;
+}
+
+body main .main-content .time-start p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
